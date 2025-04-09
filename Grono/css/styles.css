@@ -232,4 +232,188 @@ footer .container p {
   0% { background-position-x: 0; }
   100% { background-position-x: 1200px; }
 }
+body {
+  background: linear-gradient(135deg, #e0f7fa, #fce4ec);
+  background-attachment: fixed;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.glass-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-brand {
+  color: #212121 !important;
+  font-weight: 600;
+  font-size: 1.1rem;
+  white-space: normal;
+  line-height: 1.2;
+}
+
+.nav-link {
+  color: #212121 !important;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #007bff !important;
+  text-shadow: 0 0 2px rgba(0, 123, 255, 0.3);
+}
+
+.navbar-toggler {
+  border: none;
+  padding: 10px;
+  font-size: 1.5rem;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%2821, 21, 21, 0.7%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+h1.page-title {
+  text-align: center;
+  margin: 40px 0 20px;
+  font-weight: 600;
+  color: #343a40;
+}
+
+header.hero {
+  padding: 100px 0;
+  text-align: center;
+  color: white;
+  background: linear-gradient(135deg, #42a5f5, #7e57c2);
+}
+
+header.hero h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  animation: fadeInDown 1s ease-out;
+}
+
+header.hero p {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 20px auto;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.btn-hero {
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  background-color: #ffffff;
+  color: #007bff;
+  font-weight: 600;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-hero:hover {
+  background-color: #f8f9fa;
+  color: #0056b3;
+  transform: scale(1.05);
+}
+
+h2.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 600;
+  color: #343a40;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+  header.hero h1 {
+    font-size: 2rem;
+  }
+
+  header.hero p {
+    font-size: 1rem;
+  }
+
+  .btn-hero {
+    padding: 10px 24px;
+    font-size: 1rem;
+  }
+
+  h1.page-title {
+    font-size: 1.8rem;
+  }
+
+  h2.section-title {
+    font-size: 1.5rem;
+  }
+
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 10px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  header.hero {
+    padding: 60px 0;
+  }
+
+  section {
+    padding: 40px 15px;
+  }
+
+  #news-container .col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* Стилі для блоку "Про нас" */
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  margin: 60px auto;
+  max-width: 800px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-in-out;
+}
+
+.glass-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.social-icons a {
+  font-size: 1.8rem;
+  margin: 0 15px;
+  color: #333;
+  transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #007bff;
+  transform: scale(1.2);
+}
 

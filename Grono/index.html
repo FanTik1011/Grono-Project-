@@ -38,6 +38,7 @@
         <li class="nav-item"><a class="nav-link" href="news.html">Новини</a></li>
         <li class="nav-item"><a class="nav-link" href="#about-card">Про нас</a></li>
         <li class="nav-item"><a class="nav-link" href="index.html">Головна</a></li>
+        <li class="nav-item"><a class="nav-link" href="team.html">Наша Команда</a></li>
       </ul>
     </div>
   </div>
@@ -62,16 +63,7 @@
   </div>
 </section>
 
-<!-- Анімаційне небо -->
-<div class="sky-scene" data-aos="fade-in">
-  <div class="sun"></div>
-  <div class="ray ray1"></div>
-  <div class="ray ray2"></div>
-  <div class="cloud cloud1"></div>
-  <div class="cloud cloud2"></div>
-  <div class="cloud cloud3"></div>
-  <div class="wave"></div>
-</div>
+
 
 <!-- Про нас -->
 <section class="py-5">
@@ -149,11 +141,11 @@
     const preloader = document.getElementById("preloader");
     setTimeout(() => {
       preloader.classList.add("fade-out");
-    }, 600); // затримка перед зникненням
+    }, 200); // затримка перед зникненням
 
     setTimeout(() => {
       preloader.style.display = "none";
-    }, 1800); // 600 (затримка) + 1200 (тривалість анімації)
+    }, 1400); // 600 (затримка) + 1200 (тривалість анімації)
   });
 </script>
 

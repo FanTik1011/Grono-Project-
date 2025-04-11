@@ -22,6 +22,7 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="news.html">Новини</a></li>
           <li class="nav-item"><a class="nav-link" href="index.html">Головна</a></li>
+          <li class="nav-item"><a class="nav-link" href="team.html">Наша Команда</a></li>
         </ul>
       </div>
     </div>
@@ -84,11 +85,31 @@
           container.appendChild(col);
         });
       });
+        // Живий годинник
+  setInterval(() => {
+    const now = new Date();
+    document.getElementById('live-time').textContent = now.toLocaleTimeString('uk-UA');
+  }, 1000);
+</script>
+<script>
+  window.addEventListener("load", () => {
+    const preloader = document.getElementById("preloader");
+    setTimeout(() => {
+      preloader.classList.add("fade-out");
+    }, 600); // затримка перед зникненням
+
+    setTimeout(() => {
+      preloader.style.display = "none";
+    }, 1800); // 600 (затримка) + 1200 (тривалість анімації)
+  });
   </script>
-  <footer class="footer py-4">
-    <div class="container text-center">
-      <p class="mb-1">&copy; 2025 Ліцей "Гроно". Всі права захищені.</p>
-    </div>
-  </footer>
+<!-- Footer -->
+<footer class="footer py-4">
+  <div class="container text-center">
+    <p class="mb-1">&copy; 2025 Ліцей "Гроно". Всі права захищені.</p>
+    <p class="mb-0">Зараз: <span id="live-time"></span></p>
+  </div>
+</footer>
+
 </body>
 </html>

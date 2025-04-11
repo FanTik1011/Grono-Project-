@@ -417,3 +417,245 @@ h2.section-title {
   transform: scale(1.2);
 }
 
+
+
+
+
+.navbar {
+  transition: all 0.3s ease-in-out;
+}
+
+.glass-navbar {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  box-shadow: none;
+}
+
+.glass-navbar.scrolled {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.hero {
+  padding: 100px 0;
+  text-align: center;
+  background: linear-gradient(to right, #e3f2fd, #fff);
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-top: 15px;
+}
+
+.btn-hero {
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 30px;
+  padding: 10px 25px;
+}
+
+.btn-hero:hover {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.social-icons a {
+  font-size: 2rem;
+  margin: 0 15px;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #007bff;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #007bff;
+  border-radius: 50%;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-to-top:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+}
+
+.footer {
+
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+/* === SKY анімація (проста) === */
+.sky-scene {
+  position: relative;
+  height: 200px;
+  background: linear-gradient(to top, #aee1f9, #ffffff);
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+.sun {
+  width: 100px;
+  height: 100px;
+  background: yellow;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* === АДАПТИВНІСТЬ === */
+@media (max-width: 991px) {
+  .navbar-brand {
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 1rem;
+    padding: 8px 0;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .btn-hero {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
+
+  .glass-card h1, .glass-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .glass-card p {
+    font-size: 1rem;
+  }
+
+  .social-icons a {
+    font-size: 1.5rem;
+    margin: 0 10px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    padding: 60px 20px;
+  }
+
+  .glass-card {
+    padding: 20px;
+  }
+
+  .social-icons {
+    flex-wrap: wrap;
+  }
+
+  .scroll-to-top {
+    right: 15px;
+    bottom: 15px;
+    padding: 10px;
+    font-size: 1.5rem;
+  }
+
+  .sun {
+    width: 70px;
+    height: 70px;
+    top: 30px;
+  }
+
+  .footer {
+    font-size: 0.85rem;
+  }
+}
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.glass-loader {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.pulse {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #007bff, #6610f2);
+  animation: pulseAnim 1.2s ease-in-out infinite;
+}
+
+@keyframes pulseAnim {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.loading-text {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #333;
+  font-family: 'Segoe UI', sans-serif;
+}

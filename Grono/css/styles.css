@@ -659,3 +659,11 @@ h2.section-title {
   color: #333;
   font-family: 'Segoe UI', sans-serif;
 }
+#preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1.2s ease, visibility 1.2s ease;
+}
+html {
+  scroll-behavior: smooth;
+}

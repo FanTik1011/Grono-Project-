@@ -30,12 +30,22 @@
     </button>
     
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="news.html">Новини</a></li>
-        <li class="nav-item"><a class="nav-link" href="#about-card">Про нас</a></li>
-        <li class="nav-item"><a class="nav-link" href="index.html">Головна</a></li>
-        <li class="nav-item"><a class="nav-link" href="team.html">Наша Команда</a></li>
-      </ul>
+ <ul class="navbar-nav ms-auto">
+  <li class="nav-item"><a class="nav-link" href="news.html">Новини</a></li>
+  <li class="nav-item"><a class="nav-link" href="#about-card">Про нас</a></li>
+  <li class="nav-item"><a class="nav-link" href="index.html">Головна</a></li>
+  <li class="nav-item"><a class="nav-link" href="team.html">Наша Команда</a></li>
+
+  <!-- Вкладка "Профіль" – лише для залогінених -->
+  <li class="nav-item d-none" id="profile-tab">
+    <a class="nav-link" href="profile.html">Мій профіль</a>
+  </li>
+
+  <!-- Кнопка входу/виходу -->
+  <li class="nav-item">
+    <a id="login-button" class="nav-link" href="#">Увійти</a>
+  </li>
+</ul>
     </div>
   </div>
 </nav>
@@ -144,7 +154,82 @@
     }, 1400); // 600 (затримка) + 1200 (тривалість анімації)
   });
 </script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  netlifyIdentity.on("init", user => {
+    updateLoginUI(user);
+  });
 
+  netlifyIdentity.on("login", user => {
+    updateLoginUI(user);
+    netlifyIdentity.close(); // Закриває модальне вікно після логіну
+  });
+
+  netlifyIdentity.on("logout", () => {
+    updateLoginUI(null);
+  });
+
+  document.getElementById("login-button").addEventListener("click", () => {
+    const user = netlifyIdentity.currentUser();
+    if (user) {
+      netlifyIdentity.logout();
+    } else {
+      netlifyIdentity.open();
+    }
+  });
+
+  function updateLoginUI(user) {
+    const loginBtn = document.getElementById("login-button");
+    if (user) {
+      loginBtn.textContent = "Вийти (" + user.user_metadata.full_name + ")";
+    } else {
+      loginBtn.textContent = "Увійти";
+    }
+  }
+
+  // Ініціалізація
+  netlifyIdentity.init();
+</script>
+
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  const loginBtn = document.getElementById("login-button");
+  const profileTab = document.getElementById("profile-tab");
+
+  function updateLoginUI(user) {
+    if (user) {
+      loginBtn.textContent = "Вийти (" + user.user_metadata.full_name + ")";
+      profileTab.classList.remove("d-none");
+    } else {
+      loginBtn.textContent = "Увійти";
+      profileTab.classList.add("d-none");
+    }
+  }
+
+  netlifyIdentity.on("init", user => {
+    updateLoginUI(user);
+  });
+
+  netlifyIdentity.on("login", user => {
+    updateLoginUI(user);
+    netlifyIdentity.close();
+  });
+
+  netlifyIdentity.on("logout", () => {
+    updateLoginUI(null);
+  });
+
+  loginBtn.addEventListener("click", () => {
+    const user = netlifyIdentity.currentUser();
+    if (user) {
+      netlifyIdentity.logout();
+    } else {
+      netlifyIdentity.open();
+    }
+  });
+
+  netlifyIdentity.init();
+</script>
 
 </body>
 </html>

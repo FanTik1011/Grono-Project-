@@ -514,7 +514,25 @@ h2.section-title {
   font-size: 0.95rem;
 }
 
+/* === SKY анімація (проста) === */
+.sky-scene {
+  position: relative;
+  height: 200px;
+  background: linear-gradient(to top, #aee1f9, #ffffff);
+  overflow: hidden;
+  margin-bottom: 50px;
+}
 
+.sun {
+  width: 100px;
+  height: 100px;
+  background: yellow;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
 
 /* === АДАПТИВНІСТЬ === */
 @media (max-width: 991px) {
@@ -649,24 +667,3 @@ h2.section-title {
 html {
   scroll-behavior: smooth;
 }
-body {
-  padding-top: 80px; /* можна збільшити до 90-100px, якщо навбар вищий */
-}
-/* Робимо navbar видимим на білому фоні на мобільному */
-@media (max-width: 768px) {
-  .glass-navbar {
-    background-color: rgba(255, 255, 255, 0.95) !important;
-    backdrop-filter: blur(10px);
-  }
-
-  .navbar-brand {
-    font-size: 1rem;
-    line-height: 1.2;
-  }
-
-  .navbar-nav .nav-link {
-    font-size: 1.05rem;
-    padding: 0.5rem 1rem;
-  }
-}
-

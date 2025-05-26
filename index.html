@@ -133,7 +133,7 @@
     }
 
     netlifyIdentity.on("init", user => updateLoginUI(user));
-    netlifyIdentity.on("login", user => {
+    netlifyIdentity.on("login", user => {ьф
       updateLoginUI(user);
       netlifyIdentity.close();
     });
@@ -145,5 +145,7 @@
     });
     netlifyIdentity.init();
   </script>
+
+
 </body>
 </html>

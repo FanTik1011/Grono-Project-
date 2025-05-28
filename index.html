@@ -32,8 +32,7 @@
           <li class="nav-item"><a class="nav-link" href="news.html">Новини</a></li>
           <li class="nav-item"><a class="nav-link" href="#about-card">Про нас</a></li>
           <li class="nav-item"><a class="nav-link" href="team.html">Наша команда</a></li>
-          <li class="nav-item d-none" id="profile-tab"><a class="nav-link" href="profile.html">Мій профіль</a></li>
-          <li class="nav-item"><a id="login-button" class="nav-link" href="#">Увійти</a></li>
+          
         </ul>
       </div>
     </div>
@@ -118,32 +117,7 @@
       setTimeout(() => preloader.style.display = "none", 1400);
     });
 
-    // Netlify Identity
-    const loginBtn = document.getElementById("login-button");
-    const profileTab = document.getElementById("profile-tab");
-
-    function updateLoginUI(user) {
-      if (user) {
-        loginBtn.textContent = "Вийти (" + user.user_metadata.full_name + ")";
-        profileTab.classList.remove("d-none");
-      } else {
-        loginBtn.textContent = "Увійти";
-        profileTab.classList.add("d-none");
-      }
-    }
-
-    netlifyIdentity.on("init", user => updateLoginUI(user));
-    netlifyIdentity.on("login", user => {ьф
-      updateLoginUI(user);
-      netlifyIdentity.close();
-    });
-    netlifyIdentity.on("logout", () => updateLoginUI(null));
-    loginBtn.addEventListener("click", () => {
-      const user = netlifyIdentity.currentUser();
-      if (user) netlifyIdentity.logout();
-      else netlifyIdentity.open();
-    });
-    netlifyIdentity.init();
+   
   </script>
 
 
